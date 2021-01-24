@@ -1,11 +1,11 @@
 import './App.css';
 import Menu from './component/Menu'
-import Header from './component/Header';
+import OrderHistoryPanel from './component/OrderHistoryPanel';
 function App() {
   return (
-    <div>
-      <Header />
+    <div className="content">
       <Menu />
+      <OrderHistoryPanel />
     </div>
   );
 }
