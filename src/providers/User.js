@@ -11,14 +11,26 @@ export default function User({ children }) {
 
     useEffect(() => {
         // get user info on redirect after login successfully
-        getLoginRedirectResult().then(fetchedUser => {
-            if (typeof fetchedUser !== "undefined") {
-                console.log("fetchedUser is ", fetchedUser);
-                setUser(prevUser => ({ ...prevUser, displayName: fetchedUser.displayName, photoURL: fetchedUser.photoURL }));
+        // getLoginRedirectResult().then(fetchedUser => {
+        //     if (typeof fetchedUser !== "undefined") {
+        //         console.log("fetchedUser is ", fetchedUser);
+        //         setUser(prevUser => ({ ...prevUser, displayName: fetchedUser.displayName, photoURL: fetchedUser.photoURL }));
+        //         history.push('/dashboard');
+        //     }
+        // });
+
+        var unsubscribe = firebase.auth().onAuthStateChanged(function (fetchedUser) {
+            if (fetchedUser) {
+                setUser({ displayName: fetchedUser.displayName, photoURL: fetchedUser.photoURL });
                 history.push('/dashboard');
             }
-        });
-        
+            else setUser({ displayName: "", photoURL: "" });
+        })
+
+        return () => {
+            unsubscribe();
+        }
+
 
     }, [])
 

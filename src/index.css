@@ -19,7 +19,7 @@ body {
 
 .flex {
     display: flex;  
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 }
 
 .grid-column {
