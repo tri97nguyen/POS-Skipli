@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { googleProvider, auth } from '../firebase'
+import { withRouter } from 'react-router-dom'
 
 export default function Login() {
     const [loginInfo, setLoginInfo] = useState({
@@ -31,7 +33,18 @@ export default function Login() {
                 <button className="block login-content" type="submit">Login</button>
                 <button className="block login-content" type="submit">Signup</button>
             </form>
+            <div className="line-break"></div>
+            <button onClick={loginGoogle} className="block btn">Sign in with Google</button>
         </div>
     )
 }
 
+async function loginGoogle() {
+    try {
+        var result = await auth.signInWithRedirect(googleProvider);
+
+    } catch (e) {
+        console.error(e)
+    }
+
+}

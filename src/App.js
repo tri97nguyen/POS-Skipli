@@ -1,25 +1,22 @@
 import './App.css';
-import Menu from './component/Menu'
-import OrderHistoryPanel from './component/OrderHistoryPanel';
+
 import Login from './component/Login'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom'
+import UserContext from './providers/User'
+import Dashboard from './component/Dashboard';
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Route path="/dashboard">
-        <div className="content grid-column">
-          <Menu />
-          <OrderHistoryPanel />
-        </div>
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
 
-    </Router>
+
+    <UserContext>
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/login" component={Login} />
+    </UserContext>
+
+
+
+
 
   );
 }
-
-export default App;
