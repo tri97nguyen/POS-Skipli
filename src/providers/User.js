@@ -1,14 +1,12 @@
 import React, { useEffect, createContext, useState } from 'react'
-import { Redirect } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
+import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/app'
 
-var UserContext = createContext(null);
+export var UserContext = createContext(null);
 
-var history = createBrowserHistory();
 
 export default function User({ children }) {
-
+    var history = useHistory();
     var [user, setUser] = useState({ displayName: "", photoURL: "" });
 
     useEffect(() => {
@@ -17,17 +15,20 @@ export default function User({ children }) {
             if (typeof fetchedUser !== "undefined") {
                 console.log("fetchedUser is ", fetchedUser);
                 setUser(prevUser => ({ ...prevUser, displayName: fetchedUser.displayName, photoURL: fetchedUser.photoURL }));
+                history.push('/dashboard');
             }
         });
+        
+
     }, [])
 
-    if (user.displayName !== "") return (<Redirect to="/dashboard" />)
-    else
-        return (
-            <UserContext.Provider value={user}>
-                {children}
-            </UserContext.Provider>
-        )
+    console.log(user.displayName);
+
+    return (
+        <UserContext.Provider value={user}>
+            {children}
+        </UserContext.Provider>
+    )
 }
 
 

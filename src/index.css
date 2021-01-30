@@ -20,7 +20,6 @@ body {
 .flex {
     display: flex;  
     flex-flow: row wrap;
-    justify-content: space-between;
 }
 
 .grid-column {
@@ -151,6 +150,7 @@ body {
 
     #order-panel-btn {
         display: block;
+        margin-left: auto;
     }
 }
 
