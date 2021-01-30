@@ -18,7 +18,7 @@ export default function Header() {
 
     return (
         <div className="header flex">
-            <p>Welcome {user.displayName}. Not you?</p>
+            <div>Welcome {user.displayName}. Not you?</div>
             <button className="block btn" onClick={signOut}>Logout</button>
             <button id="order-panel-btn" className="btn" onClick={toggleOrderPanel}>{'>>'}</button>
         </div>

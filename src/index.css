@@ -45,11 +45,21 @@ body {
     grid-column: 1 / 13;
     align-items: center;
     background-color: var(--colorTwo);
+    overflow: hidden;
+    
 }
+
 
 .footer {
     grid-column: 1 / 13;
     background-color: var(--colorThree);
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.table-btn {
+    margin-left: auto;
 }
 
 
