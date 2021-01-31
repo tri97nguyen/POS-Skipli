@@ -11,6 +11,45 @@ body {
     padding: 0;
 }
 
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 70%;
+    height: 70%;
+    background-color: var(--colorFour);
+}
+
+.modal-header {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.close-btn {
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--colorFive);
+}
+
+.close-btn:hover, .close-btn:focus {
+    cursor: pointer;
+    color: black;
+
+}
+
+#modal-close-btn {
+    margin-left: auto;
+}
+
 .btn {
     border-radius: 30px;
     background-color: var(--colorFour);
