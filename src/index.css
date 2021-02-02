@@ -234,6 +234,11 @@ body {
     font-weight: bold;
 }
 
+.current-table {
+    background-color: var(--colorFour);
+    font-size: 25px;
+}
+
 .selected-table {
     /* border-color: var(--colorFour); */
     background-color: var(--colorTwo);

@@ -23,7 +23,7 @@ export default function Footer() {
 
     return (
         <div className="footer">
-            <div>Current Table: {table ? table : "No table selected"}</div>
+            <div className="current-table">Current Table: {table ? table : "No table selected"}</div>
             <button className="btn table-btn" onClick={toggleTable}>Choose Table</button>
             {modalOpen ?
                 <Modal>
