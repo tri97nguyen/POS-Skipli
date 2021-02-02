@@ -2,6 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/analytics'
 import 'firebase/firestore'
+import 'firebase/database'
 
 var firebaseConfig = {
     apiKey: "AIzaSyAHVSz3lh_kZU2hj6EuvQ1zuHViHsSdrGQ",
@@ -19,3 +20,4 @@ firebase.analytics();
 
 export var googleProvider = new firebase.auth.GoogleAuthProvider();
 export var auth = firebase.auth();
+export var database = firebase.database();

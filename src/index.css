@@ -27,11 +27,17 @@ body {
     width: 70%;
     height: 70%;
     background-color: var(--colorFour);
+
 }
 
 .modal-header {
     display: flex;
     flex-flow: row nowrap;
+}
+
+.modal-body {
+    height: 80%;
+    overflow-y: auto;
 }
 
 .close-btn {
@@ -199,6 +205,38 @@ body {
     background-color: var(--colorOne);
     width: 50%;    
     margin-bottom: 10px;
+}
+
+.table-select {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    /* overflow-y: hidden;     */
+    
+}
+
+.table {
+    background-color: var(--colorOne);
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.table-number {
+    font-size: large;
+    background-color: inherit;
+    font-weight: bold;
+}
+
+.selected-table {
+    /* border-color: var(--colorFour); */
+    background-color: var(--colorTwo);
 }
 
 /* for mobile */
