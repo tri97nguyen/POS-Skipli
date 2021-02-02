@@ -23,7 +23,7 @@ export default function Footer() {
 
     return (
         <div className="footer">
-            <div className="current-table">Current Table: {table ? table : "No table selected"}</div>
+            <div className="current-table">Current Table: {table ? table : "None"}</div>
             <button className="btn table-btn" onClick={toggleTable}>Choose Table</button>
             {modalOpen ?
                 <Modal>
@@ -37,8 +37,8 @@ export default function Footer() {
                                 <TableSelect pendingTable={pendingTable} setPendingTable={setPendingTable} table={table} setTable={setTable} />
                             </div>
                             <div className="modal-footer">
-                                <button onClick={selectTable}>Confirm</button>
-                                <button onClick={toggleTable}>Cancel</button>
+                                <button style={{ backgroundColor: "var(--colorOne)" }} className="btn block" onClick={selectTable}>Confirm</button>
+                                <button style={{ backgroundColor: "var(--colorOne)" }} className="btn block" onClick={toggleTable}>Cancel</button>
                             </div>
                         </div>
                     </div>

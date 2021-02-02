@@ -40,6 +40,13 @@ body {
     overflow-y: auto;
 }
 
+.modal-footer {
+    margin-top: 10px;
+    display: flex;
+    flex: row;
+    justify-content: flex-end;
+}
+
 .close-btn {
     text-decoration: none;
     font-size: 30px;
@@ -210,9 +217,6 @@ body {
 .table-select {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-    /* overflow-y: hidden;     */
     
 }
 
@@ -220,7 +224,7 @@ body {
     background-color: var(--colorOne);
     height: 100px;
     width: 100px;
-    margin-bottom: 10px;
+    margin: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
