@@ -3,6 +3,7 @@ import 'firebase/auth'
 import 'firebase/analytics'
 import 'firebase/firestore'
 import 'firebase/database'
+import { mockData } from './mockdata'
 
 var firebaseConfig = {
     apiKey: "AIzaSyAHVSz3lh_kZU2hj6EuvQ1zuHViHsSdrGQ",
@@ -15,9 +16,14 @@ var firebaseConfig = {
     measurementId: "G-GJ1N62VF64"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} else {
+    firebase.app(); // if already initialized, use that one
+}
 firebase.analytics();
 
 export var googleProvider = new firebase.auth.GoogleAuthProvider();
 export var auth = firebase.auth();
 export var database = firebase.database();
+
