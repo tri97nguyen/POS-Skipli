@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="footer">
             <div className="current-table">Current Table: {table ? table : "None"}</div>
             <button className="btn table-btn" onClick={toggleTable}>Choose Table</button>
-            {modalOpen ?
+            {modalOpen ?    
                 <Modal>
                     <div onClick={toggleTable} className="modal-backdrop">
                         <div onClick={e => e.stopPropagation()} className="modal-content">

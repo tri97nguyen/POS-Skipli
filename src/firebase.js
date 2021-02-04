@@ -3,7 +3,8 @@ import 'firebase/auth'
 import 'firebase/analytics'
 import 'firebase/firestore'
 import 'firebase/database'
-import { mockData } from './mockdata'
+import 'firebase/storage'
+
 
 var firebaseConfig = {
     apiKey: "AIzaSyAHVSz3lh_kZU2hj6EuvQ1zuHViHsSdrGQ",
@@ -26,4 +27,7 @@ firebase.analytics();
 export var googleProvider = new firebase.auth.GoogleAuthProvider();
 export var auth = firebase.auth();
 export var database = firebase.database();
+export var storageRef = firebase.storage().ref();
+
+
 

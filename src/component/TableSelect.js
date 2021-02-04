@@ -21,7 +21,7 @@ export default function TableSelect({ table, setPendingTable, pendingTable }) {
     } else {
         console.log("pending table is null, it should show current table")
         for (let i = 0; i < tableInfo.length; i++) {
-            if (table == i) tables.push(<div onClick={selectTable} className="table selected-table" ><p className="table-number">{i}</p></div>)
+            if (table == i) tables.push(<div key={i} onClick={selectTable} className="table selected-table" ><p className="table-number">{i}</p></div>)
             else tables.push(<div key={i} onClick={selectTable} className="table" ><p className="table-number">{i}</p></div>)
         }
     }
