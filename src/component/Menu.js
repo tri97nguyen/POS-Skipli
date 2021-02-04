@@ -7,15 +7,16 @@ import { DishesContext } from '../providers/Dishes'
 
 export default function Menu() {
     var dishes = useContext(DishesContext);
-    var photos = []
-    for (var i = 0; i < 100; i++) {
-        photos.push(<Dish />)
-    }
+    var dishesArray = Object.values(dishes);
+    // dishesArray = [...dishesArray, ...dishesArray, ...dishesArray]
+    console.log(dishesArray);
+    dishesArray = dishesArray.map(dish => <Dish {...dish} />)
+
     return (
         <section id="menu" onClick={toggleOrderPanelFromMenu} className="menu grid-column-row">
             <Header />
             <div className="img-container">
-                {photos}
+                {dishesArray}
             </div>
             <Footer />
 

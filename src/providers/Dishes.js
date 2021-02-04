@@ -11,6 +11,8 @@ export default function Dishes({ children }) {
         const dishesRef = database.ref('dishes');
 
         dishesRef.on('value', function updateDishes(snapshot) {
+
+            console.log("ori snapshot", snapshot.val())
             setDishes(snapshot.val());
         });
 
