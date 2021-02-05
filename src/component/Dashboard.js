@@ -7,9 +7,10 @@ import { DishesContext } from "../providers/Dishes";
 
 export default function Dashboard() {
   var user = useContext(UserContext);
+  var history = useHistory();
   var dishesContext = useContext(DishesContext);
 
-  // if (user.displayName == "") history.push('/login'); // if not log in, redirect to login page
+  if (user.displayName == "") history.push('/login'); // if not log in, redirect to login page
   return (
     <div className="content grid-column">
       <Menu />

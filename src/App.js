@@ -14,7 +14,7 @@ export default function App() {
         <UserProvider>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/login" component={Login} />
-          {/* <Redirect from="*" to="/login" /> */}
+          <Redirect from="*" to="/login" />
         </UserProvider>
       </TableProvider>
     </DishProvider>
