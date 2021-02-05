@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import SelectedDish from "./SelectedDish";
+import { DishesContext } from "../providers/Dishes";
 
 export default function OrderHistoryPanel() {
-  var orders = [];
-  for (var i = 0; i < 3; i++) {
-    orders.push(<SelectedDish key={i} />);
-  }
+  let { dishes, dishesDispatch } = useContext(DishesContext);
+
+  dishes = dishes.map((dish, index) => {
+    if (dish.quantity > 0)
+      return (
+        <SelectedDish
+          key={index}
+          index={index}
+          {...dish}
+          dishesDispatch={dishesDispatch}
+        />
+      );
+  });
+
   return (
     <div
       id="order-history-panel"
@@ -13,7 +24,7 @@ export default function OrderHistoryPanel() {
     >
       <div className="table-number">table number</div>
       <div className="metadata">order metadata</div>
-      <div className="order-container">{orders}</div>
+      <div className="order-container">{dishes}</div>
       <div className="summary">total summary</div>
     </div>
   );

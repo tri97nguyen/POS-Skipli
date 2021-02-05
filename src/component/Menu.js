@@ -5,13 +5,8 @@ import { toggleOrderPanelFromMenu } from "../shared/service";
 import Dish from "./Dish";
 import { DishesContext } from "../providers/Dishes";
 
-export default function Menu({ dishes, dishesDispatch }) {
-  //   var dishes = useContext(DishesContext);
-  //   var dishesArray = Object.values(dishes);
-  //   // dishesArray = [...dishesArray, ...dishesArray, ...dishesArray]
-  //   console.log(dishesArray);
-  //   dishesArray = dishesArray.map((dish) => <Dish {...dish} />);
-
+export default function Menu() {
+  var { dishes, dishesDispatch } = useContext(DishesContext);
   const dishesArray = dishes.map((dish, index) => (
     <Dish key={index} index={index} {...dish} dishesDispatch={dishesDispatch} />
   ));

@@ -1,16 +1,37 @@
 import React from "react";
+import { ADD_DISH, REMOVE_DISH } from "../providers/Dishes";
 
-export default function SelectedDish() {
+export default function SelectedDish({
+  name,
+  photoURL,
+  quantity,
+  dishesDispatch,
+  index
+}) {
+  console.log(`dish name ${name} quantity ${quantity}`);
+
   return (
     <div className="selected-dish">
-      <img src="" alt="" className="selected-dish-image" />
-      <div className="selected-dish-info">selected dish info</div>
+      <img src={photoURL} alt="" className="selected-dish-image" />
+      <div className="selected-dish-info">{name}</div>
       <div className="selected-dish-quantity">
         <p>Qt.</p>
-        <p>1</p>
+        <p>{quantity}</p>
       </div>
-      <button className="btn block selected-dish-btn">+</button>
-      <button className="btn block selected-dish-btn">-</button>
+      <button
+        onClick={() => dishesDispatch({ type: ADD_DISH, payload: { index } })}
+        className="btn block selected-dish-btn"
+      >
+        +
+      </button>
+      <button
+        onClick={() =>
+          dishesDispatch({ type: REMOVE_DISH, payload: { index } })
+        }
+        className="btn block selected-dish-btn"
+      >
+        -
+      </button>
     </div>
   );
 }
