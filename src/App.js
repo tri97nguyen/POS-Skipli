@@ -6,6 +6,7 @@ import UserProvider from "./providers/User";
 import TableProvider from "./providers/Table";
 import Dashboard from "./component/Dashboard";
 import DishProvider from "./providers/Dishes";
+import SignUpPage from "./component/SignUpPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <UserProvider>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUpPage} />
           <Redirect from="*" to="/login" />
         </UserProvider>
       </TableProvider>

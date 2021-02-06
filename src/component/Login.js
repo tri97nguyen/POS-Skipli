@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { googleProvider, auth } from "../firebase";
-import { withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
+
 
 export default function Login() {
   const [loginInfo, setLoginInfo] = useState({
@@ -52,14 +53,12 @@ export default function Login() {
         <button className="block login-content" type="submit">
           Login
         </button>
-        <button className="block login-content" type="submit">
-          Signup
-        </button>
       </form>
       <div className="line-break"></div>
       <button onClick={loginGoogle} className="block btn">
         Sign in with Google
       </button>
+      <div className="text-center"> <NavLink to= "/signup" activeClassName="is-active"> Create an Account</NavLink></div>
     </div>
   );
 }
